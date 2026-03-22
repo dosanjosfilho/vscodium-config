@@ -1,7 +1,8 @@
 #!/bin/bash
 # =============================================================================
 # switch-profile.sh
-# Applies a VSCodium profile: copies settings and installs extensions.
+# Applies a VSCodium profile: syncs extensions (install + uninstall)
+# and copies settings.json.
 #
 # Usage:
 #   ./switch-profile.sh data-science
@@ -33,26 +34,52 @@ if [[ ! -d "$REPO_DIR/$PROFILE" ]]; then
   exit 1
 fi
 
-# ── Settings ──────────────────────────────────────────────────────────────────
-
 echo ""
 echo "🔄 Switching to profile: $PROFILE"
 echo ""
 
+# ── Settings ──────────────────────────────────────────────────────────────────
+
 cp "$REPO_DIR/$PROFILE/settings.json" "$CONFIG_DIR/settings.json"
 echo "✅ settings.json applied"
+echo ""
 
-# ── Extensions ────────────────────────────────────────────────────────────────
+# ── Build list of wanted extensions (strip comments and blank lines) ──────────
 
-echo "📦 Installing extensions..."
+WANTED=$(grep -v '^\s*#' "$REPO_DIR/$PROFILE/extensions.txt" \
+  | grep -v '^\s*$' \
+  | tr '[:upper:]' '[:lower:]')
+
+# ── Uninstall extensions not in the target profile ───────────────────────────
+
+echo "🗑️  Removing extensions not in profile '$PROFILE'..."
+echo ""
+
+INSTALLED=$(codium --list-extensions | tr '[:upper:]' '[:lower:]')
+
+while IFS= read -r ext; do
+  if ! echo "$WANTED" | grep -qx "$ext"; then
+    echo "   ✗ $ext"
+    codium --uninstall-extension "$ext" 2>/dev/null || true
+  fi
+done <<< "$INSTALLED"
+
+echo ""
+
+# ── Install missing extensions ────────────────────────────────────────────────
+
+echo "📦 Installing extensions for profile '$PROFILE'..."
 echo ""
 
 while IFS= read -r ext; do
-  # Skip empty lines and comments
-  [[ -z "$ext" || "$ext" == \#* ]] && continue
-  echo "   → $ext"
-  codium --install-extension "$ext" --force 2>/dev/null
-done < "$REPO_DIR/$PROFILE/extensions.txt"
+  [[ -z "$ext" ]] && continue
+  if echo "$INSTALLED" | grep -qx "$ext"; then
+    echo "   ✓ $ext (already installed)"
+  else
+    echo "   + $ext"
+    codium --install-extension "$ext" 2>/dev/null
+  fi
+done <<< "$WANTED"
 
 # ── Done ──────────────────────────────────────────────────────────────────────
 
