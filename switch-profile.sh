@@ -55,6 +55,9 @@ WANTED=$(grep -v '^\s*#' "$REPO_DIR/$PROFILE/extensions.txt" \
 echo "🗑️  Removing extensions not in profile '$PROFILE'..."
 echo ""
 
+# Always remove ms-python.vscode-python-envs — conflicts with uv
+codium --uninstall-extension ms-python.vscode-python-envs 2>/dev/null || true
+
 INSTALLED=$(codium --list-extensions | tr '[:upper:]' '[:lower:]')
 
 while IFS= read -r ext; do

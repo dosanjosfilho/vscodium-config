@@ -70,7 +70,6 @@
   "editor.formatOnSave": true,
   "editor.minimap.enabled": false,
   "editor.rulers": [88],
-  "editor.lineHeight": 1.5,
   "editor.renderWhitespace": "boundary",
   "workbench.editor.closeOnFileDelete": true,
   "workbench.editor.enablePreview": false,

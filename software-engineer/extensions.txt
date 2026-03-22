@@ -23,6 +23,9 @@ oven.bun-vscode
 # ── Code Quality ──────────────────────────────────────────────────────────────
 usernamehw.errorlens
 
+# ── Code Quality ──────────────────────────────────────────────────────────────
+usernamehw.errorlens
+
 # ── File Formats ──────────────────────────────────────────────────────────────
 redhat.vscode-yaml
 
