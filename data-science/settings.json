@@ -1,0 +1,96 @@
+{
+  // ================================================================
+  // Profile: Data Scientist
+  // ================================================================
+
+  // ── Theme ────────────────────────────────────────────────────────
+  "workbench.colorTheme": "Catppuccin Latte",
+  "workbench.iconTheme": "catppuccin-latte",
+
+  // ── Font: Fira Code Nerd Font ─────────────────────────────────────
+  // Required for Starship prompt icons and font ligatures
+  "editor.fontFamily": "FiraCode Nerd Font",
+  "editor.fontSize": 14.5,
+  "editor.lineHeight": 1.6,
+  "editor.fontLigatures": true,
+  "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
+  "terminal.integrated.fontSize": 13,
+
+  // ── Terminal ─────────────────────────────────────────────────────
+  "terminal.integrated.defaultProfile.osx": "zsh",
+
+  // ── Python / uv ──────────────────────────────────────────────────
+  "python.defaultInterpreterPath": ".venv/bin/python",
+  "python.terminal.activateEnvironment": true,
+
+  // ── ty: Language Server ──────────────────────────────────────────
+  // Disables the Python extension's built-in language server to avoid conflict.
+  // ty takes over: go-to-definition, autocomplete, inlay hints, auto-import.
+  "python.languageServer": "None",
+  "ty.importStrategy": "fromEnvironment",
+
+  // ── Ruff: Formatter + Linter ─────────────────────────────────────
+  // Fallback for projects without a pyproject.toml.
+  // When pyproject.toml exists, its [tool.ruff] section takes precedence.
+  "ruff.lineLength": 88,
+  "ruff.lint.select": ["E", "F", "B", "I", "UP", "SIM", "N"],
+
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.ruff": "explicit",
+      "source.organizeImports.ruff": "explicit"
+    }
+  },
+
+  // ── Jupyter / Notebooks ──────────────────────────────────────────
+  "jupyter.kernels.filter": [],
+  "jupyter.interactiveWindow.textEditor.executeSelection": true,
+  "notebook.lineNumbers": "on",
+  "notebook.formatOnSave.enabled": true,
+  "notebook.codeActionsOnSave": {
+    "notebook.source.fixAll": "explicit",
+    "notebook.source.organizeImports": "explicit"
+  },
+  "notebook.formatOnCellExecution": true,
+
+  // ── pytest ───────────────────────────────────────────────────────
+  "python.testing.pytestEnabled": true,
+  "python.testing.pytestArgs": ["tests"],
+  "python.testing.autoTestDiscoverOnSaveEnabled": true,
+
+  // ── autoDocstring ────────────────────────────────────────────────
+  "autoDocstring.docstringFormat": "google",
+  "autoDocstring.startOnNewLine": true,
+
+  // ── Editor ───────────────────────────────────────────────────────
+  "editor.inlayHints.enabled": "on",
+  "editor.stickyScroll.enabled": true,
+  "editor.formatOnSave": true,
+  "editor.minimap.enabled": false,
+  "editor.rulers": [88],
+  "editor.lineHeight": 1.5,
+  "editor.renderWhitespace": "boundary",
+  "workbench.editor.closeOnFileDelete": true,
+  "workbench.editor.enablePreview": false,
+
+  // ── TOML ─────────────────────────────────────────────────────────
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml",
+    "editor.formatOnSave": true
+  },
+
+  // ── YAML ─────────────────────────────────────────────────────────
+  "yaml.format.enable": true,
+  "yaml.validate": true,
+  "[yaml]": {
+    "editor.formatOnSave": true
+  },
+
+  // ── Privacy ──────────────────────────────────────────────────────
+  "telemetry.telemetryLevel": "off",
+  "workbench.enableExperiments": false,
+  "extensions.autoCheckUpdates": false,
+  "update.mode": "none"
+}

@@ -1,0 +1,112 @@
+{
+  // ================================================================
+  // Profile: Software Engineer
+  // Stack: TypeScript, React Native (Expo), Bun, Biome
+  // ================================================================
+
+  // ── Theme ────────────────────────────────────────────────────────
+  "workbench.colorTheme": "Catppuccin Latte",
+  "workbench.iconTheme": "catppuccin-latte",
+
+  // ── Font: Fira Code Nerd Font ─────────────────────────────────────
+  // Required for Starship prompt icons and font ligatures
+  "editor.fontFamily": "FiraCode Nerd Font",
+  "editor.fontSize": 14.5,
+  "editor.lineHeight": 1.6,
+  "editor.fontLigatures": true,
+  "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
+  "terminal.integrated.fontSize": 13,
+
+  // ── Terminal ─────────────────────────────────────────────────────
+  "terminal.integrated.defaultProfile.osx": "zsh",
+
+  // ── Biome: JS/TS/React Formatter + Linter ────────────────────────
+  "biome.enabled": true,
+  // Only activate Biome LSP when a biome.json exists in the project root
+  "biome.requireConfig": true,
+
+  "[javascript]": {
+    "editor.defaultFormatter": "biomejs.biome",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.biome": "explicit",
+      "source.organizeImports.biome": "explicit"
+    }
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "biomejs.biome",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.biome": "explicit",
+      "source.organizeImports.biome": "explicit"
+    }
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "biomejs.biome",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.biome": "explicit",
+      "source.organizeImports.biome": "explicit"
+    }
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "biomejs.biome",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.biome": "explicit",
+      "source.organizeImports.biome": "explicit"
+    }
+  },
+  "[json]": {
+    "editor.defaultFormatter": "biomejs.biome",
+    "editor.formatOnSave": true
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "biomejs.biome",
+    "editor.formatOnSave": true
+  },
+
+  // ── Expo ─────────────────────────────────────────────────────────
+  "files.associations": {
+    "*.jsx": "javascriptreact",
+    "*.tsx": "typescriptreact",
+    "bun.lock": "yaml"
+  },
+
+  // ── Search and File Watcher ───────────────────────────────────────
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/.expo": true,
+    "**/dist": true,
+    "**/.next": true
+  },
+  "files.watcherExclude": {
+    "**/node_modules/**": true,
+    "**/.expo/**": true,
+    "**/dist/**": true
+  },
+
+  // ── Editor ───────────────────────────────────────────────────────
+  "editor.formatOnSave": true,
+  "editor.inlayHints.enabled": "on",
+  "editor.stickyScroll.enabled": true,
+  "editor.minimap.enabled": false,
+  "editor.rulers": [80, 88],
+  "editor.lineHeight": 1.5,
+  "editor.renderWhitespace": "boundary",
+  "workbench.editor.closeOnFileDelete": true,
+  "workbench.editor.enablePreview": false,
+
+  // ── YAML ─────────────────────────────────────────────────────────
+  "yaml.format.enable": true,
+  "yaml.validate": true,
+  "[yaml]": {
+    "editor.formatOnSave": true
+  },
+
+  // ── Privacy ──────────────────────────────────────────────────────
+  "telemetry.telemetryLevel": "off",
+  "workbench.enableExperiments": false,
+  "extensions.autoCheckUpdates": false,
+  "update.mode": "none"
+}
