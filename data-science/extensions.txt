@@ -1,29 +1,28 @@
 # =============================================================================
 # Profile: Data Scientist
 # Extensions installed by switch-profile.sh
+#
+# Note: some extensions install dependencies automatically:
+#   ms-python.python     → ms-python.vscode-python-envs, ms-python.debugpy
+#   ms-toolsai.jupyter   → jupyter-keymap, jupyter-renderers,
+#                          vscode-jupyter-cell-tags, vscode-jupyter-slideshow
 # =============================================================================
 
 # ── Theme ─────────────────────────────────────────────────────────────────────
-# Catppuccin Latte: light pastel theme designed to reduce eye strain
 Catppuccin.catppuccin-vsc
-# Catppuccin icons: matching icon pack
 Catppuccin.catppuccin-vsc-icons
 
 # ── Python Core ───────────────────────────────────────────────────────────────
 ms-python.python
-ms-python.debugpy
 
 # ── Astral Toolchain ──────────────────────────────────────────────────────────
-# ty: type checker + language server (replaces Pylance/Pyright)
 astral-sh.ty
-# Ruff: linter + formatter (replaces black, flake8, isort)
 charliermarsh.ruff
 
-# ── Jupyter / Data Science ────────────────────────────────────────────────────
+# ── Jupyter ───────────────────────────────────────────────────────────────────
 ms-toolsai.jupyter
-ms-toolsai.jupyter-keymap
-ms-toolsai.jupyter-cell-tags
-ms-toolsai.datawrangler
+
+# ── Data Science ──────────────────────────────────────────────────────────────
 mechatroner.rainbow-csv
 
 # ── Code Quality ──────────────────────────────────────────────────────────────
@@ -40,4 +39,4 @@ mermaidchart.vscode-mermaid-chart
 # ── AI Agents ─────────────────────────────────────────────────────────────────
 anthropic.claude-code
 openai.chatgpt
-Google.geminicodeassist
+google.geminicodeassist
