@@ -50,17 +50,31 @@ WANTED=$(grep -v '^\s*#' "$REPO_DIR/$PROFILE/extensions.txt" \
   | grep -v '^\s*$' \
   | tr '[:upper:]' '[:lower:]')
 
+# ── Extensions managed automatically as dependencies (never uninstall) ────────
+# ms-python.python     → ms-python.debugpy, ms-python.vscode-python-envs
+# ms-toolsai.jupyter   → jupyter-keymap, jupyter-renderers,
+#                        vscode-jupyter-cell-tags, vscode-jupyter-slideshow
+
+MANAGED_DEPS=(
+  "ms-python.debugpy"
+  "ms-toolsai.jupyter-keymap"
+  "ms-toolsai.jupyter-renderers"
+  "ms-toolsai.vscode-jupyter-cell-tags"
+  "ms-toolsai.vscode-jupyter-slideshow"
+)
+
 # ── Uninstall extensions not in the target profile ───────────────────────────
 
 echo "🗑️  Removing extensions not in profile '$PROFILE'..."
 echo ""
 
-# Always remove ms-python.vscode-python-envs — conflicts with uv
-codium --uninstall-extension ms-python.vscode-python-envs 2>/dev/null || true
-
 INSTALLED=$(codium --list-extensions | tr '[:upper:]' '[:lower:]')
 
 while IFS= read -r ext; do
+  # Skip if it's a managed dependency
+  if printf '%s\n' "${MANAGED_DEPS[@]}" | grep -qx "$ext"; then
+    continue
+  fi
   if ! echo "$WANTED" | grep -qx "$ext"; then
     echo "   ✗ $ext"
     codium --uninstall-extension "$ext" 2>/dev/null || true
@@ -83,6 +97,11 @@ while IFS= read -r ext; do
     codium --install-extension "$ext" 2>/dev/null
   fi
 done <<< "$WANTED"
+
+# ── Always remove ms-python.vscode-python-envs (conflicts with uv) ───────────
+# Must run after installs since ms-python.python reinstalls it as a dependency
+
+codium --uninstall-extension ms-python.vscode-python-envs 2>/dev/null || true
 
 # ── Done ──────────────────────────────────────────────────────────────────────
 
