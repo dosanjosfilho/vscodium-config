@@ -103,13 +103,6 @@ done <<< "$WANTED"
 
 codium --uninstall-extension ms-python.vscode-python-envs 2>/dev/null || true
 
-# ── Re-apply settings.json after installs ────────────────────────────────────
-# Some extensions (e.g. Gemini Code Assist) overwrite settings on first install.
-# Re-applying ensures our settings take final precedence.
-
-cp "$REPO_DIR/$PROFILE/settings.json" "$CONFIG_DIR/settings.json"
-echo "✅ settings.json re-applied (overrides post-install extension defaults)"
-
 # ── Done ──────────────────────────────────────────────────────────────────────
 
 echo ""
