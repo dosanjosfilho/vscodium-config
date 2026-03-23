@@ -91,5 +91,10 @@
   "telemetry.telemetryLevel": "off",
   "workbench.enableExperiments": false,
   "extensions.autoCheckUpdates": false,
-  "update.mode": "none"
+  "update.mode": "none",
+
+  // ── Gemini Code Assist ───────────────────────────────────────────
+  // Prevents the extension from auto-assigning a random Google Cloud
+  // project on personal accounts (known bug with individual accounts)
+  "geminicodeassist.project": ""
 }
