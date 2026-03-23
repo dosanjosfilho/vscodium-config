@@ -5,9 +5,7 @@
 # =============================================================================
 
 # ── Theme ─────────────────────────────────────────────────────────────────────
-# Catppuccin Latte: light pastel theme designed to reduce eye strain
 Catppuccin.catppuccin-vsc
-# Catppuccin icons: matching icon pack
 Catppuccin.catppuccin-vsc-icons
 
 # ── Biome ─────────────────────────────────────────────────────────────────────
@@ -23,9 +21,6 @@ oven.bun-vscode
 # ── Code Quality ──────────────────────────────────────────────────────────────
 usernamehw.errorlens
 
-# ── Code Quality ──────────────────────────────────────────────────────────────
-usernamehw.errorlens
-
 # ── File Formats ──────────────────────────────────────────────────────────────
 redhat.vscode-yaml
 
@@ -35,4 +30,4 @@ mermaidchart.vscode-mermaid-chart
 # ── AI Agents ─────────────────────────────────────────────────────────────────
 anthropic.claude-code
 openai.chatgpt
-Google.geminicodeassist
+google.geminicodeassist
