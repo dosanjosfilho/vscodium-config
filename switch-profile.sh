@@ -94,7 +94,7 @@ while IFS= read -r ext; do
     echo "   ✓ $ext (already installed)"
   else
     echo "   + $ext"
-    codium --install-extension "$ext" 2>/dev/null
+    codium --install-extension "$ext" --ignore-certificate-errors 2>/dev/null
   fi
 done <<< "$WANTED"
 
@@ -102,6 +102,13 @@ done <<< "$WANTED"
 # Must run after installs since ms-python.python reinstalls it as a dependency
 
 codium --uninstall-extension ms-python.vscode-python-envs 2>/dev/null || true
+
+# ── Re-apply settings.json after installs ────────────────────────────────────
+# Some extensions (e.g. Gemini Code Assist) overwrite settings on first install.
+# Re-applying ensures our settings take final precedence.
+
+cp "$REPO_DIR/$PROFILE/settings.json" "$CONFIG_DIR/settings.json"
+echo "✅ settings.json re-applied (overrides post-install extension defaults)"
 
 # ── Done ──────────────────────────────────────────────────────────────────────
 
