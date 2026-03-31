@@ -8,7 +8,7 @@
 | Profile | Stack |
 |---|---|
 | `data-science` | Python · uv · ruff · ty · Jupyter · pytest |
-| `software-engineer` | TypeScript · Expo · Bun · Biome |
+| `software-engineer` | TypeScript · Expo · Bun · ESLint + Prettier |
 
 Both profiles include:
 - [Fira Code Nerd Font](https://github.com/ryanoasis/nerd-fonts) with ligatures
@@ -127,7 +127,8 @@ vscodium-config/
 
 | Tool | Role |
 |---|---|
-| [Biome](https://biomejs.dev) | Linter + formatter for JS/TS/JSX/TSX/JSON |
+| [ESLint](https://eslint.org) | Linter for JS/TS/JSX/TSX (runs Prettier as a rule) |
+| [Prettier](https://prettier.io) | Code formatter for JS/TS/JSX/TSX/JSON |
 | [Bun](https://bun.sh) | JavaScript runtime + package manager |
 | [Expo](https://expo.dev) | React Native framework |
 

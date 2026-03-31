@@ -1,7 +1,7 @@
 {
   // ================================================================
   // Profile: Software Engineer
-  // Stack: TypeScript, React Native (Expo), Bun, Biome
+  // Stack: TypeScript, React Native (Expo), Bun, ESLint + Prettier
   // ================================================================
 
   // ── Theme ────────────────────────────────────────────────────────
@@ -20,49 +20,54 @@
   // ── Terminal ─────────────────────────────────────────────────────
   "terminal.integrated.defaultProfile.osx": "zsh",
 
-  // ── Biome: JS/TS/React Formatter + Linter ────────────────────────
-  "biome.enabled": true,
-  // Only activate Biome LSP when a biome.json exists in the project root
-  "biome.requireConfig": true,
+  // ── ESLint + Prettier: JS/TS/React Linter + Formatter ────────────
+  // ESLint runs Prettier as a rule via eslint-plugin-prettier;
+  // the Prettier extension handles format-on-save.
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
 
   "[javascript]": {
-    "editor.defaultFormatter": "biomejs.biome",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
-      "source.fixAll.biome": "explicit",
-      "source.organizeImports.biome": "explicit"
+      "source.fixAll.eslint": "explicit",
+      "source.organizeImports": "explicit"
     }
   },
   "[javascriptreact]": {
-    "editor.defaultFormatter": "biomejs.biome",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
-      "source.fixAll.biome": "explicit",
-      "source.organizeImports.biome": "explicit"
+      "source.fixAll.eslint": "explicit",
+      "source.organizeImports": "explicit"
     }
   },
   "[typescript]": {
-    "editor.defaultFormatter": "biomejs.biome",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
-      "source.fixAll.biome": "explicit",
-      "source.organizeImports.biome": "explicit"
+      "source.fixAll.eslint": "explicit",
+      "source.organizeImports": "explicit"
     }
   },
   "[typescriptreact]": {
-    "editor.defaultFormatter": "biomejs.biome",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
-      "source.fixAll.biome": "explicit",
-      "source.organizeImports.biome": "explicit"
+      "source.fixAll.eslint": "explicit",
+      "source.organizeImports": "explicit"
     }
   },
   "[json]": {
-    "editor.defaultFormatter": "biomejs.biome",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true
   },
   "[jsonc]": {
-    "editor.defaultFormatter": "biomejs.biome",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true
   },
 

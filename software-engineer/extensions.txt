@@ -1,16 +1,18 @@
 # =============================================================================
 # Profile: Software Engineer
 # Extensions installed by switch-profile.sh
-# Stack: TypeScript, React Native (Expo), Bun, Biome
+# Stack: TypeScript, React Native (Expo), Bun, ESLint + Prettier
 # =============================================================================
 
 # ── Theme ─────────────────────────────────────────────────────────────────────
 Catppuccin.catppuccin-vsc
 Catppuccin.catppuccin-vsc-icons
 
-# ── Biome ─────────────────────────────────────────────────────────────────────
-# Linter + formatter for JS/TS/JSX/TSX/JSON (replaces ESLint + Prettier)
-biomejs.biome
+# ── ESLint + Prettier ─────────────────────────────────────────────────────────
+# ESLint for linting (runs Prettier as a rule via eslint-plugin-prettier)
+dbaeumer.vscode-eslint
+# Prettier for formatting JS/TS/JSX/TSX/JSON/JSONC
+esbenp.prettier-vscode
 
 # ── Expo / React Native ───────────────────────────────────────────────────────
 expo.vscode-expo-tools
