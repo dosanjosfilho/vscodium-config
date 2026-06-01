@@ -1,7 +1,7 @@
 # =============================================================================
 # Profile: Software Engineer
 # Extensions installed by switch-profile.sh
-# Stack: TypeScript, React Native (Expo), Bun, ESLint + Prettier
+# Stack: TypeScript, React Native (Expo), pnpm, ESLint + Prettier
 # =============================================================================
 
 # ── Theme ─────────────────────────────────────────────────────────────────────
@@ -17,9 +17,6 @@ esbenp.prettier-vscode
 # ── Expo / React Native ───────────────────────────────────────────────────────
 expo.vscode-expo-tools
 
-# ── Bun ───────────────────────────────────────────────────────────────────────
-oven.bun-vscode
-
 # ── Code Quality ──────────────────────────────────────────────────────────────
 usernamehw.errorlens
 
@@ -32,4 +29,3 @@ mermaidchart.vscode-mermaid-chart
 # ── AI Agents ─────────────────────────────────────────────────────────────────
 anthropic.claude-code
 openai.chatgpt
-google.geminicodeassist

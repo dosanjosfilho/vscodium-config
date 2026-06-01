@@ -8,12 +8,12 @@
 | Profile | Stack |
 |---|---|
 | `data-science` | Python · uv · ruff · ty · Jupyter · pytest |
-| `software-engineer` | TypeScript · Expo · Bun · ESLint + Prettier |
+| `software-engineer` | TypeScript · Expo · pnpm · ESLint + Prettier |
 
 Both profiles include:
 - [Fira Code Nerd Font](https://github.com/ryanoasis/nerd-fonts) with ligatures
 - [Starship](https://starship.rs) terminal font rendering
-- Claude Code · Codex · Gemini AI agents
+- Claude Code · Codex AI agents
 
 ---
 
@@ -129,7 +129,7 @@ vscodium-config/
 |---|---|
 | [ESLint](https://eslint.org) | Linter for JS/TS/JSX/TSX (runs Prettier as a rule) |
 | [Prettier](https://prettier.io) | Code formatter for JS/TS/JSX/TSX/JSON |
-| [Bun](https://bun.sh) | JavaScript runtime + package manager |
+| [pnpm](https://pnpm.io) | Package manager |
 | [Expo](https://expo.dev) | React Native framework |
 
 ---

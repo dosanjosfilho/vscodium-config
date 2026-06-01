@@ -1,7 +1,7 @@
 {
   // ================================================================
   // Profile: Software Engineer
-  // Stack: TypeScript, React Native (Expo), Bun, ESLint + Prettier
+  // Stack: TypeScript, React Native (Expo), pnpm, ESLint + Prettier
   // ================================================================
 
   // ── Theme ────────────────────────────────────────────────────────
@@ -74,8 +74,7 @@
   // ── Expo ─────────────────────────────────────────────────────────
   "files.associations": {
     "*.jsx": "javascriptreact",
-    "*.tsx": "typescriptreact",
-    "bun.lock": "yaml"
+    "*.tsx": "typescriptreact"
   },
 
   // ── Search and File Watcher ───────────────────────────────────────
