@@ -3,7 +3,7 @@
 # Extensions installed by switch-profile.sh
 #
 # Note: some extensions install dependencies automatically:
-#   ms-python.python     → ms-python.vscode-python-envs, ms-python.debugpy
+#   ms-python.python     → ms-python.debugpy
 #   ms-toolsai.jupyter   → jupyter-keymap, jupyter-renderers,
 #                          vscode-jupyter-cell-tags, vscode-jupyter-slideshow
 # =============================================================================
@@ -14,6 +14,7 @@ Catppuccin.catppuccin-vsc-icons
 
 # ── Python Core ───────────────────────────────────────────────────────────────
 ms-python.python
+ms-python.vscode-python-envs
 
 # ── Astral Toolchain ──────────────────────────────────────────────────────────
 astral-sh.ty
@@ -35,7 +36,3 @@ redhat.vscode-yaml
 
 # ── Diagrams ──────────────────────────────────────────────────────────────────
 mermaidchart.vscode-mermaid-chart
-
-# ── AI Agents ─────────────────────────────────────────────────────────────────
-anthropic.claude-code
-openai.chatgpt

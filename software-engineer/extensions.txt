@@ -25,7 +25,3 @@ redhat.vscode-yaml
 
 # ── Diagrams ──────────────────────────────────────────────────────────────────
 mermaidchart.vscode-mermaid-chart
-
-# ── AI Agents ─────────────────────────────────────────────────────────────────
-anthropic.claude-code
-openai.chatgpt

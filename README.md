@@ -13,7 +13,6 @@
 Both profiles include:
 - [Fira Code Nerd Font](https://github.com/ryanoasis/nerd-fonts) with ligatures
 - [Starship](https://starship.rs) terminal font rendering
-- Claude Code · Codex AI agents
 
 ---
 

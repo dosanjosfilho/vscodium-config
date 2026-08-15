@@ -51,7 +51,7 @@ WANTED=$(grep -v '^\s*#' "$REPO_DIR/$PROFILE/extensions.txt" \
   | tr '[:upper:]' '[:lower:]')
 
 # ── Extensions managed automatically as dependencies (never uninstall) ────────
-# ms-python.python     → ms-python.debugpy, ms-python.vscode-python-envs
+# ms-python.python     → ms-python.debugpy
 # ms-toolsai.jupyter   → jupyter-keymap, jupyter-renderers,
 #                        vscode-jupyter-cell-tags, vscode-jupyter-slideshow
 
@@ -97,11 +97,6 @@ while IFS= read -r ext; do
     codium --install-extension "$ext" --ignore-certificate-errors 2>/dev/null
   fi
 done <<< "$WANTED"
-
-# ── Always remove ms-python.vscode-python-envs (conflicts with uv) ───────────
-# Must run after installs since ms-python.python reinstalls it as a dependency
-
-codium --uninstall-extension ms-python.vscode-python-envs 2>/dev/null || true
 
 # ── Done ──────────────────────────────────────────────────────────────────────
 

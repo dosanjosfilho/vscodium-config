@@ -22,6 +22,8 @@
   // ── Python / uv ──────────────────────────────────────────────────
   "python.defaultInterpreterPath": ".venv/bin/python",
   "python.terminal.activateEnvironment": true,
+  "python.useEnvironmentsExtension": true,
+  "python-envs.alwaysUseUv": true,
 
   // ── ty: Language Server ──────────────────────────────────────────
   // Disables the Python extension's built-in language server to avoid conflict.
@@ -45,7 +47,6 @@
   },
 
   // ── Jupyter / Notebooks ──────────────────────────────────────────
-  "jupyter.kernels.filter": [],
   "jupyter.interactiveWindow.textEditor.executeSelection": true,
   "notebook.lineNumbers": "on",
   "notebook.formatOnSave.enabled": true,
